@@ -18,15 +18,22 @@ The Pub/sub template is a streaming pipeline that can read JSON-formatted messag
 Impact: Demonstrates environmental monitoring for smart cities 
 
 - Pub/Sub topic in JSON format used;
+```  
 {
   "station_id": "ST123",
+  
   "city": “Accra”,
+  
   "pm25": 32.5,
+  
   "pm10": 65.0,
+  
   "co2": "412",
+  
   "timestamp": “2025-08-26T12:30:00Z,
+  
 }
-
+```
 IoT sensors (or the software that manages it, like Raspberry Pi, Arduino, or edge gateway) sends HTTP or gRPC request to Pub/Sub APIs. 
 For this project I did not have a real-time streaming data from any IoT sensor so I used a local file as a streaming source (batch-to-stream trick): I wrote a python script to read the file line by line and publish each row into Pub/Sub (with a delay e.g., 1 sec per row). These mimics streaming, even though the source is a static file.
 
@@ -71,14 +78,20 @@ Save
   
 *Create appropriate schema to match the structure of the incoming Pub/Sub data*
 **Shema:** This references the topic (incoming data) schema
+```
+station_id: string,
+ 
+city: string,
+ 
+pm25: float,
 
-station_id: string, 
-city: string, 
-pm25: float, 
 pm10: float,
+
 co2: integer
+
 timestamp: timestamp,
-  
+
+```
 **Running The Pipeline**
 Test Dataflow before Running: 
 - Use DirectRunner(Local Testing): Apache Beam provides DirectRunner, which runs my pipeline locally on my machine (no dataflow, no costs).
