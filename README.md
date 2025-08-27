@@ -5,7 +5,7 @@ Real-time Air Quality Monitoring in Accra
 
 **Source:** IoT sensors in cities stream air quality data (PM2.5, PM10, CO, NO2, O3 levels every few seconds)
 
-- In this project I used Publish/Subscribe (Pub/sub) to BigQuery.
+- In this project I used Pub/sub to BigQuery 
   
 The Pub/sub template is a streaming pipeline that can read JSON-formatted messages from a Pub/Sub topic and write them to a BigQuery table 
 
