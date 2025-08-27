@@ -1,6 +1,6 @@
-# realtime-analytics-pipeline
+## realtime-analytics-pipeline
 
-## Streaming Pipeline Using Dataflow: 
+# Streaming Pipeline Using Dataflow: 
 Real-time Air Quality Monitoring in Accra
 
 **Source:** IoT sensors in cities stream air quality data (PM2.5, PM10, CO, NO2, O3 levels every few seconds)
@@ -38,6 +38,7 @@ IoT sensors (or the software that manages it, like Raspberry Pi, Arduino, or edg
 For this project I did not have a real-time streaming data from any IoT sensor so I used a local file as a streaming source (batch-to-stream trick): I wrote a python script to read the file line by line and publish each row into Pub/Sub (with a delay e.g., 1 sec per row). These mimics streaming, even though the source is a static file.
 
 **Enabling APIs (Project Selector)**
+
 Google Cloud Storage uses APIs to communicate and to create a communication. All necessary APIs were enabled.
 - Dataflow
 - Compute Engine
@@ -61,7 +62,8 @@ Copy the following needed for the later section;
 User Account
 - Dataflow Admin
 - Service Account User
-Compute Service Engine Account-This is an automatically specially created account by Google when you create a google cloud project. 
+  
+Compute Service Engine Account: *This is an automatically specially created account by Google when you create a google cloud project.* 
 - Dataflow worker role
 - Storage Object Admin role
 - Pub/sub editor role
