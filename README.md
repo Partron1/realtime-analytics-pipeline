@@ -77,6 +77,7 @@ Save
 - Create an empty table for dataset
   
 *Create appropriate schema to match the structure of the incoming Pub/Sub data*
+
 **Shema:** This references the topic (incoming data) schema
 ```
 station_id: string,
