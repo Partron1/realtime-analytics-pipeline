@@ -18,7 +18,7 @@ The Pub/sub template is a streaming pipeline that can read JSON-formatted messag
 Impact: Demonstrates environmental monitoring for smart cities 
 
 - Pub/Sub topic in JSON format used;
-```  
+```JSON  
 {
      
 "timestamp":1672531200000,
@@ -89,9 +89,7 @@ Save
 *Create appropriate schema to match the structure of the incoming Pub/Sub data*
 
 **Shema:** This references the topic (incoming data) schema
-```
-{
-     
+```    
 timestamp:timestamp,
 
 location: string,
@@ -109,8 +107,6 @@ O3:float,
 temperature:float,
 
 humidity:float
-
-}
 
 ```
 **Running The Pipeline**
