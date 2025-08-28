@@ -43,7 +43,7 @@ Impact: Demonstrates environmental monitoring for smart cities
 
 ```
 IoT sensors (or the software that manages it, like Raspberry Pi, Arduino, or edge gateway) sends HTTP or gRPC request to Pub/Sub APIs. 
-For this project I did not have a real-time streaming data from any IoT sensor so I used a local file as a streaming source (batch-to-stream trick): I wrote a python script to read the file line by line and publish each row into Pub/Sub (with a delay e.g., 1 sec per row). These mimics streaming, even though the source is a static file.
+For this project I did not have a real-time streaming data from any IoT sensor so I used a local file as a streaming source **(batch-to-stream trick)**: I wrote a python script to read the file line by line and publish each row into Pub/Sub (with a delay e.g., 1 sec per row). These mimics streaming, even though the source is a static file.
 
 **Enabling APIs (Project Selector)**
 
@@ -60,7 +60,7 @@ Google Cloud Storage uses APIs to communicate and to create a communication. All
 **Create a cloud storage bucket**
 Create a cloud storage bucket for Dataflow for temporary files, staging files, and sometimes pipeline output.
 Enter a unique bucket name. No sensitive information because the bucket name space in global and publicly visible.
-- Choose where to save your data
+- Choosed where to save my data
 
 Copy the following needed for the later section;
 - Cloud Storage Bucket name
