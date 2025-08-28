@@ -11,7 +11,7 @@ The Pub/sub template is a streaming pipeline that can read JSON-formatted messag
 
 **Pipeline:**  
 - Pub/sub (raw messages) 
-- Dataflow [Custom User Defined Function (UDF) stage: clean/transform/enrich] 
+- Dataflow (Custom User Defined Function (UDF) stage: clean/transform/enrich)
 - BigQuery (analytics-ready table) 
 
 **Dashboard:** Tableau showing city-level pollution heatmaps, alerts when thresholds are exceeded. 
@@ -20,19 +20,27 @@ Impact: Demonstrates environmental monitoring for smart cities
 - Pub/Sub topic in JSON format used;
 ```  
 {
-  "station_id": "ST123",
-  
-  "city": “Accra”,
-  
-  "pm25": 32.5,
-  
-  "pm10": 65.0,
-  
-  "co2": "412",
-  
-  "timestamp": “2025-08-26T12:30:00Z,
-  
+     
+"timestamp":1672531200000,
+
+"location":"Accra",
+
+"PM2.5":41.3,
+
+"PM10":12.56,
+
+"NO2":13.65,
+
+"CO":2.57,
+
+"O3":131.05,
+
+"temperature":26.6,
+
+"humidity":71.6
+
 }
+
 ```
 IoT sensors (or the software that manages it, like Raspberry Pi, Arduino, or edge gateway) sends HTTP or gRPC request to Pub/Sub APIs. 
 For this project I did not have a real-time streaming data from any IoT sensor so I used a local file as a streaming source (batch-to-stream trick): I wrote a python script to read the file line by line and publish each row into Pub/Sub (with a delay e.g., 1 sec per row). These mimics streaming, even though the source is a static file.
@@ -82,17 +90,27 @@ Save
 
 **Shema:** This references the topic (incoming data) schema
 ```
-station_id: string,
- 
-city: string,
- 
-pm25: float,
+{
+     
+timestamp:timestamp,
 
-pm10: float,
+location: string,
 
-co2: integer
+PM2.5: float,
 
-timestamp: timestamp,
+PM10:float,
+
+NO2:float,
+
+CO:float,
+
+O3:float,
+
+temperature:float,
+
+humidity:float
+
+}
 
 ```
 **Running The Pipeline**
