@@ -3,7 +3,7 @@
 ### Streaming Pipeline Using Dataflow: 
 Real-time Air Quality Monitoring in Accra
 
-**Source:** IoT sensors in cities stream air quality data (PM2.5, PM10, CO, NO2, O3 levels every few seconds)
+**Source:** IoT sensors in cities stream air quality data (timestamp, location, PM2.5, PM10, CO, NO2, O3, temperature and humidity levels every few seconds)
 
 - In this project I used Pub/sub to BigQuery 
   
@@ -113,6 +113,7 @@ humidity:float
 Test Dataflow before Running: 
 - Use DirectRunner(Local Testing): Apache Beam provides DirectRunner, which runs my pipeline locally on my machine (no dataflow, no costs).
 - Use Small Sample Data: Instead of real Pub/Sub streams, I created a fake dataset (like a JSON file with 10-20 records)
+  
 The pipeline gets incoming data from the input topic
 
 **Go to Jobs**
@@ -127,4 +128,5 @@ The pipeline gets incoming data from the input topic
 - Run Job
 
 View Results
+
 Got to BigQuery page
