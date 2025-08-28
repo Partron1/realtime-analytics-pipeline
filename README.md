@@ -48,6 +48,7 @@ For this project I did not have a real-time streaming data from any IoT sensor s
 
 I wrote a python script to read the file line by line and publish each row into Pub/Sub (with a delay e.g., 1 sec per row). These mimics streaming, even though the source is a static file.
 
+
 **Enabling APIs (Project Selector)**
 
 Google Cloud Storage uses APIs to communicate and to create a communication. All necessary APIs were enabled.
