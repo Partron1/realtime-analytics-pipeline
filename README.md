@@ -48,7 +48,7 @@ IoT sensors (or the software that manages it, like Raspberry Pi, Arduino, or edg
 
 For this project I did not have a real-time streaming data from any IoT sensor so I used a local file as a streaming source **(batch-to-stream trick)**
 
-I wrote a python script to read the file line by line and publish each row into Pub/Sub (with a delay e.g., 1 sec per row). These mimics streaming, even though the source is a static file.
+Python script to read the file line by line and publish each row into Pub/Sub (with a delay e.g., 1 sec per row). These mimics streaming, even though the source is a static file.
 
 
 **Enabling APIs (Project Selector)**
