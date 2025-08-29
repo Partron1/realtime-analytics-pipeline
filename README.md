@@ -15,6 +15,7 @@ The Pub/sub template is a streaming pipeline that can read JSON-formatted messag
 - BigQuery (analytics-ready table) 
 
 **Dashboard:** 
+
 Tableau showing city-level pollution heatmaps, alerts when thresholds are exceeded. 
 Impact: Demonstrates environmental monitoring for smart cities 
 
