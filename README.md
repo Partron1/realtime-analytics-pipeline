@@ -62,22 +62,15 @@ Google Cloud Storage uses APIs to communicate and to create a communication. All
 - Pub/Sub
 - Resource Manager
 
-**Create a cloud storage bucket**
-Create a cloud storage bucket for Dataflow for temporary files, staging files, and sometimes pipeline output.
-Enter a unique bucket name. No sensitive information because the bucket name space in global and publicly visible.
-- Choosed where to save my data
-
-Copy the following needed for the later section;
-- Cloud Storage Bucket name
-- Google Cloud Project ID
-
 **Enable Roles:(Go to IAM)**
 Note: The "Include Google-provided role grants" ensures Dataflow runs smoothly without me worrying about every micro-permission* 
 1. User Account
 - Dataflow Admin
 - Service Account User
   
-2. Compute Service Engine Account: *This is an automatically specially created account by Google when you create a google cloud project.
+2. Grant access
+Compute Engine default service account email: 527899781926-compute@developer.gserviceaccount.com
+*This is an automatically specially created account by Google when you create a google cloud project.*
 - Dataflow worker role
 - Storage Object Admin role
 - Pub/sub editor role
@@ -87,6 +80,14 @@ Note: The "Include Google-provided role grants" ensures Dataflow runs smoothly w
 **Security:** you can also replace the default Compute Engine account with a customer service account for Dataflow Pipelines. It’s one best practice to show security awareness.
 Save
 
+**Create a cloud storage bucket**
+Create a cloud storage bucket for Dataflow for temporary files, staging files, and sometimes pipeline output.
+*Entered a unique bucket name. No sensitive information because the bucket name space in global and publicly visible.*
+- Confirm: Public access prevention on this bucket
+
+*Copy the following needed for the later section;*
+*- Cloud Storage Bucket name*
+*- Google Cloud Project ID*
 
 **Create a BigQuery Dataset and Table**
 - Create dataset
