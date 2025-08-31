@@ -10,9 +10,9 @@ Real-time Air Quality Monitoring in Accra
 The Pub/sub template is a streaming pipeline that can read JSON-formatted messages from a Pub/Sub topic and write them to a BigQuery table 
 
 **Pipeline:**  
-- Pub/sub (raw messages) 
+- Pub/sub (Raw messages) 
 - Dataflow (Custom User Defined Function (UDF) stage: clean/transform/enrich)
-- BigQuery (analytics-ready table) 
+- BigQuery (Analytics-ready table) 
 
 **Dashboard:** 
 
@@ -50,7 +50,6 @@ For this project I did not have a real-time streaming data from any IoT sensor s
 
 Python script to read the file line by line and publish each row into Pub/Sub (with a delay e.g., 1 sec per row). These mimics streaming, even though the source is a static file.
 
-
 **Enabling APIs (Project Selector)**
 
 Google Cloud Storage uses APIs to communicate and to create a communication. All necessary APIs were enabled.
@@ -73,11 +72,12 @@ Copy the following needed for the later section;
 - Google Cloud Project ID
 
 **Enable Roles:(Go to IAM)**
-User Account
+Note: The "Include Google-provided role grants" ensures Dataflow runs smoothly without me worrying about every micro-permission* 
+1. User Account
 - Dataflow Admin
 - Service Account User
   
-Compute Service Engine Account: *This is an automatically specially created account by Google when you create a google cloud project.* 
+2. Compute Service Engine Account: *This is an automatically specially created account by Google when you create a google cloud project.
 - Dataflow worker role
 - Storage Object Admin role
 - Pub/sub editor role
