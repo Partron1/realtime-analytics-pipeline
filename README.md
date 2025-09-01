@@ -27,7 +27,7 @@ Impact: Demonstrates environmental monitoring for smart cities
 
 "location":"Accra",
 
-"PM2.5":41.3,
+"PM2_5":41.3,
 
 "PM10":12.56,
 
