@@ -149,7 +149,7 @@ publisher = pubsub_v1.PublisherClient()
 topic_path = publisher.topic_path(tekstain, air-quality)
 
 # Input file (each line is one "event")
-input_file = "data/sample_data.jsonl"  # JSON lines file
+input_file = "air_quality_data.jsonl"  # JSON lines file
 
 # Publish line by line with delay
 with open(input_file, "r") as f:
@@ -166,6 +166,7 @@ with open(input_file, "r") as f:
         # Delay between messages to mimic streaming
         time.sleep(1)  # 1 second per event
 ```
+
 
 ```python
 # Multi-device IoT stream simulator (Python)
@@ -186,7 +187,7 @@ topic_path = publisher.topic_path(tekstain-25, air-quality)
 device_ids = [f"device-{i}" for i in range(1, 6)]  # device-1 ... device-5
 
 # Input file (one row = one payload)
-input_file = "data/sample_data.jsonl"  # or .csv, see note below
+input_file = "air_quality_data.jsonl"  # or .csv
 
 with open(input_file, "r") as f:
     for line in f:
