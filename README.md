@@ -122,6 +122,19 @@ Test Dataflow before Running:
 - Use Small Sample Data: Instead of real Pub/Sub streams, I created a fake dataset (like a JSON file with 10-20 records)
   
 The pipeline gets incoming data from the input topic
+
+**Go to Jobs**
+- Create job from template
+- Job name: air-data
+- Template: Pub/Sub to BigQuery template
+- BigQuery output table: tekstain-25:pollution.air_quality 
+- Input Pub/Sub topic: Enter topic manually 
+- Save: 
+- Temp location: gs://teckflow_bucket/temp/
+- Network, subnetwork
+- Run Job
+
+  
 ```python
 # Batch-to-stream simulator with Pub/Sub
 import time
@@ -129,11 +142,11 @@ import json
 from google.cloud import pubsub_v1
 
 # Pub/Sub configuration
-project_id = "YOUR_PROJECT_ID"
-topic_id = "YOUR_TOPIC_ID"
+project_id = "tekstain-25"
+topic_id = "air-quality"
 
 publisher = pubsub_v1.PublisherClient()
-topic_path = publisher.topic_path(project_id, topic_id)
+topic_path = publisher.topic_path(tekstain, air-quality)
 
 # Input file (each line is one "event")
 input_file = "data/sample_data.jsonl"  # JSON lines file
@@ -163,11 +176,11 @@ from datetime import datetime
 from google.cloud import pubsub_v1
 
 # Pub/Sub configuration
-project_id = "YOUR_PROJECT_ID"
-topic_id = "YOUR_TOPIC_ID"
+project_id = "tekstain-25"
+topic_id = "air-quality"
 
 publisher = pubsub_v1.PublisherClient()
-topic_path = publisher.topic_path(project_id, topic_id)
+topic_path = publisher.topic_path(tekstain-25, air-quality)
 
 # Simulated IoT devices
 device_ids = [f"device-{i}" for i in range(1, 6)]  # device-1 ... device-5
@@ -199,17 +212,6 @@ with open(input_file, "r") as f:
         # Delay between events
         time.sleep(1)  # 1 second per simulated event
 ```
-
-**Go to Jobs**
-- Create job from template
-- Job name: air-data
-- Template: Pub/Sub to BigQuery template
-- BigQuery output table: tekstain-25:pollution.air_quality 
-- Input Pub/Sub topic: Enter topic manually 
-- Save: 
-- Temp location: gs://Bucket_Name/temp/
-- Network, subnetwork
-- Run Job
 
 View Results
 
