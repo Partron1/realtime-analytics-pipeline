@@ -146,7 +146,7 @@ project_id = "tekstain-25"
 topic_id = "air-quality"
 
 publisher = pubsub_v1.PublisherClient()
-topic_path = publisher.topic_path(tekstain, air-quality)
+topic_path = publisher.topic_path(project_id, topic_id)
 
 # Input file (each line is one "event")
 input_file = "air_quality_data.jsonl"  # JSON lines file
