@@ -63,7 +63,7 @@ Google Cloud Storage uses APIs to communicate and to create a communication. All
 - Resource Manager
 
 **Enable Roles:(Go to IAM)**
-Note: The "Include Google-provided role grants" ensures Dataflow runs smoothly without me worrying about every micro-permission* 
+Note: The "Include Google-provided role grants" *ensures Dataflow runs smoothly without me worrying about every micro-permission* 
 1. User Account
 - Dataflow Admin
 - Service Account User
@@ -78,6 +78,7 @@ Compute Engine default service account email: 527899781926-compute@developer.gse
 - Viewer role
   
 **Security:** you can also replace the default Compute Engine account with a customer service account for Dataflow Pipelines. It’s one best practice to show security awareness.
+
 Save
 
 **Create a cloud storage bucket**
