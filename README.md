@@ -135,11 +135,11 @@ from google.cloud import pubsub_v1 # is the official Google Cloud library for in
 project_id = "tekstain-25"
 topic_id = "air-quality"
 
-publisher = pubsub_v1.PublisherClient()
-topic_path = publisher.topic_path(project_id, topic_id)
+publisher = pubsub_v1.PublisherClient() # Connects your script to Pub/Sub.
+topic_path = publisher.topic_path(tekstain-25, air-quality) 
 
 # Input file (each line is one "event")
-input_file = "air_quality_data.jsonl"  # JSON lines file
+input_file = "air_quality_data.jsonl"  # This is your local data file (static data)
 
 # Publish line by line with delay
 with open(input_file, "r") as f: 
