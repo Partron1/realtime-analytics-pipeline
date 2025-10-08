@@ -13,6 +13,8 @@ IoT Sensors (Simulated) → Pub/Sub → Dataflow (UDF Transform) → BigQuery �
 
 **Impact:** To demonstrate how smart cities can monitor environmental conditions and trigger alerts when pollution thresholds are exceeded.
 
+![workflow](workflow.png)
+
 **Dashboard:** 
 
 Tableau showing city-level pollution heatmaps, alerts when thresholds are exceeded. 
