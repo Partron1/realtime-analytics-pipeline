@@ -125,18 +125,6 @@ Test Dataflow before Running:
   
 The pipeline gets incoming data from the input topic
 
-**Go to Jobs**
-- Create job from template
-- Job name: air-data
-- Template: Pub/Sub to BigQuery template
-- BigQuery output table: tekstain-25:pollution.air_quality 
-- Input Pub/Sub topic: Enter topic manually 
-- Save: 
-- Temp location: gs://teckflow_bucket/temp/
-- Network, subnetwork
-- Run Job
-
-  
 ```python
 # Batch-to-stream simulator with Pub/Sub
 import time
@@ -168,7 +156,6 @@ with open(input_file, "r") as f:
         # Delay between messages to mimic streaming
         time.sleep(1)  # 1 second per event
 ```
-
 
 ```python
 # Multi-device IoT stream simulator (Python)
@@ -215,6 +202,18 @@ with open(input_file, "r") as f:
         # Delay between events
         time.sleep(1)  # 1 second per simulated event
 ```
+
+
+**Go to Jobs**
+- Create job from template
+- Job name: air-data
+- Template: Pub/Sub to BigQuery template
+- BigQuery output table: tekstain-25:pollution.air_quality 
+- Input Pub/Sub topic: Enter topic manually 
+- Save: 
+- Temp location: gs://teckflow_bucket/temp/
+- Network, subnetwork
+- Run Job
 
 **Step	Task	When to Run**
 - **1–3**	Setup (project, IAM, BigQuery)	One-time setup
