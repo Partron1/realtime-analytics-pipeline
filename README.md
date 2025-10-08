@@ -23,9 +23,7 @@ Tableau showing city-level pollution heatmaps, alerts when thresholds are exceed
 
 - Pub/Sub topic in JSON format used;
 ```JSON  
-{
-     
-"timestamp":1672531200000,
+{"timestamp":1672531200000,
 
 "location":"Accra",
 
@@ -41,9 +39,7 @@ Tableau showing city-level pollution heatmaps, alerts when thresholds are exceed
 
 "temperature":26.6,
 
-"humidity":71.6
-
-}
+"humidity":71.6}
 
 ```
 IoT sensors (or the software that manages it, like Raspberry Pi, Arduino, or edge gateway) sends HTTP or gRPC request to Pub/Sub APIs.
