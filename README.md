@@ -1,6 +1,6 @@
 # realtime-analytics-pipeline
 ### Streaming Pipeline Using Dataflow: 
-Real-time Air Quality Monitoring in Accra
+Real-time data streaming pipeline for environmental monitoring that ingests IoT sensor data from multiple sources (PM2.5, PM10, CO, NO₂, O₃, temperature, humidity) to visualize and analyze city-level air quality in Accra.
 
 **Source:** IoT sensors in cities stream air quality data (timestamp, location, PM2.5, PM10, CO, NO2, O3, temperature and humidity levels every few seconds)
 
