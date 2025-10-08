@@ -11,12 +11,12 @@ The Pub/sub template is a streaming pipeline that can read JSON-formatted messag
 **Pipeline:**  
 IoT Sensors (Simulated) → Pub/Sub → Dataflow (UDF Transform) → BigQuery → Tableau Dashboard
 
-**Purpose:** To demonstrate how smart cities can monitor environmental conditions and trigger alerts when pollution thresholds are exceeded.
+**Impact:** To demonstrate how smart cities can monitor environmental conditions and trigger alerts when pollution thresholds are exceeded.
 
 **Dashboard:** 
 
 Tableau showing city-level pollution heatmaps, alerts when thresholds are exceeded. 
-Impact: Demonstrates environmental monitoring for smart cities 
+
 
 - Pub/Sub topic in JSON format used;
 ```JSON  
@@ -213,6 +213,13 @@ with open(input_file, "r") as f:
         # Delay between events
         time.sleep(1)  # 1 second per simulated event
 ```
+
+**Step	Task	When to Run**
+- **1–3**	Setup (project, IAM, BigQuery)	One-time setup
+- **4**	Create Pub/Sub topic	Before running Python script
+- **6**	Run Python publisher	After creating topic, before Dataflow
+- **7**	Start Dataflow job	After topic and script are ready
+- **8–9**	Monitor BigQuery + Visualize	While pipeline is running
 
 View Results
 
