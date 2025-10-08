@@ -127,9 +127,9 @@ The pipeline gets incoming data from the input topic
 
 ```python
 # Batch-to-stream simulator with Pub/Sub
-import time
+import time # adds a delay between sending messages (so it feels like real-time data).
 import json
-from google.cloud import pubsub_v1
+from google.cloud import pubsub_v1 # is the official Google Cloud library for interacting with Pub/Sub.
 
 # Pub/Sub configuration
 project_id = "tekstain-25"
@@ -142,19 +142,19 @@ topic_path = publisher.topic_path(project_id, topic_id)
 input_file = "air_quality_data.jsonl"  # JSON lines file
 
 # Publish line by line with delay
-with open(input_file, "r") as f:
-    for line in f:
+with open(input_file, "r") as f: 
+    for line in f:  # Reads one record at a time (like a sensor message), Skips empty lines.
         line = line.strip()
         if not line:
             continue
 
         # Convert to bytes (Pub/Sub requires bytes)
-        data = line.encode("utf-8")
-        future = publisher.publish(topic_path, data)
-        print(f"Published message ID: {future.result()}")
+        data = line.encode("utf-8") # Converts your JSON line to bytes (Pub/Sub requires that)
+        future = publisher.publish(topic_path, data) # Publishes the message to the Pub/Sub topic.
+        print(f"Published message ID: {future.result()}") # Prints the message ID so you know it was sent successfully.
 
         # Delay between messages to mimic streaming
-        time.sleep(1)  # 1 second per event
+        time.sleep(1)  # 1 second per event, Mimics how real IoT sensors send data every few seconds.
 ```
 
 ```python
