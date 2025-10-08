@@ -1,6 +1,6 @@
-# realtime-analytics-pipeline
-### Streaming Pipeline Using Dataflow: 
-Real-time data streaming pipeline for environmental monitoring that ingests IoT sensor data from multiple sources (PM2.5, PM10, CO, NO₂, O₃, temperature, humidity) to visualize and analyze city-level air quality in Accra.
+# Real-Time Air Quality Monitoring Pipeline (Accra)
+### Overview
+Built a real-time data streaming pipeline to monitor air quality across the city of Accra, using simulated IoT sensor data. The system ingests, transforms, stores, and visualizes environmental data (PM2.5, PM10, CO, NO₂, O₃, temperature, humidity) in real time.
 
 **Source:** IoT sensors in cities stream air quality data (timestamp, location, PM2.5, PM10, CO, NO2, O3, temperature and humidity levels every few seconds)
 
@@ -9,9 +9,9 @@ Real-time data streaming pipeline for environmental monitoring that ingests IoT 
 The Pub/sub template is a streaming pipeline that can read JSON-formatted messages from a Pub/Sub topic and write them to a BigQuery table 
 
 **Pipeline:**  
-- Pub/sub (Raw messages) 
-- Dataflow (Custom User Defined Function (UDF) stage: clean/transform/enrich)
-- BigQuery (Analytics-ready table) 
+IoT Sensors (Simulated) → Pub/Sub → Dataflow (UDF Transform) → BigQuery → Tableau Dashboard
+
+**Purpose:** To demonstrate how smart cities can monitor environmental conditions and trigger alerts when pollution thresholds are exceeded.
 
 **Dashboard:** 
 
