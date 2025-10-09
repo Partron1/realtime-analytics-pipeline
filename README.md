@@ -16,11 +16,6 @@ IoT Sensors (Simulated) → Pub/Sub → Dataflow (UDF Transform) → BigQuery �
 **Workflow Chart**
 ![workflow](workflow.png)
 
-**Dashboard:** 
-
-Tableau showing city-level pollution heatmaps, alerts when thresholds are exceeded. 
-
-
 - Pub/Sub topic in JSON format used;
 ```JSON  
 {"timestamp":1672531200000,
@@ -219,6 +214,68 @@ with open(input_file, "r") as f:
 - **7**	Start Dataflow job	After topic and script are ready
 - **8–9**	Monitor BigQuery + Visualize	While pipeline is running
 
-View Results
+**View Results**
 
-Got to BigQuery page
+Go to BigQuery page
+
+**Dashboard:** 
+
+Tableau showing city-level pollution dashboard made of different charts, alerts when thresholds are exceeded. 
+
+- Tableau can’t connect directly to Pub/Sub or Dataflow.It connects to BigQuery, where your final, cleaned data is stored.
+- Before connecting Tableau, make sure there’s at least some data already written into your BigQuery table ,even a few records.
+
+***Using Tableau Desktop:***
+
+- *Open Tableau.*
+
+- *On the start page, click Connect → To a Server → Google BigQuery.*
+
+- *Sign in with your Google account (same one used in your GCP project).*
+
+- *Tableau will show your Google Cloud projects.*
+
+- *Choose your project (e.g., tekstain-25).*
+
+- *Expand the project → dataset → select your table (e.g., pollution.air_quality).*
+
+- *Click Connect and then Load Data.*
+
+Now Tableau will pull a snapshot of your BigQuery data into its workspace.
+
+Note: For real-time streaming dashboards, Choose Live Connection, Tableau keeps a direct link to BigQuery and queries it every few seconds/minutes.
+ 
+**Build Your First Dashboard**
+
+#### 1. Drag Fields into Rows & Columns
+
+ - X-axis (Columns): timestamp, Y-axis (Rows): PM2_5
+
+#### 2. Add More Charts
+
+- Heatmap → location vs pollutant (color shows intensity)
+
+- Gauge or KPI card → average PM2.5 or CO
+
+- Line chart → trends for NO₂ or temperature
+
+#### 3. Add Filters or Parameters
+
+- Dropdown for location (e.g., Accra)
+
+- Slider for time window (last hour, last 24 hours)
+
+#### 4. Combine into a Dashboard
+
+- Click New Dashboard, then drag your individual charts into it.
+- Arrange them however you like.
+
+**Create Alerts in Tableau**
+
+If you want to get notified when pollution exceeds a threshold:
+
+- Publish your dashboard to Tableau Server or Tableau Cloud.
+
+- Create a Data-Driven Alert (e.g., PM2.5 > 35 µg/m³).
+
+- Tableau can send an email alert when the condition is met.
