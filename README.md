@@ -272,8 +272,6 @@ Note: For real-time streaming dashboards, Choose Live Connection, Tableau keeps 
 
 **Create Alerts in Tableau**
 
-If you want to get notified when pollution exceeds a threshold:
-
 - Publish your dashboard to Tableau Server or Tableau Cloud.
 
 - Create a Data-Driven Alert (e.g., PM2.5 > 35 µg/m³).
