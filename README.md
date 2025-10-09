@@ -225,25 +225,25 @@ Tableau showing city-level pollution dashboard made of different charts, alerts 
 - Tableau can’t connect directly to Pub/Sub or Dataflow.It connects to BigQuery, where your final, cleaned data is stored.
 - Before connecting Tableau, make sure there’s at least some data already written into your BigQuery table ,even a few records.
 
-***Using Tableau Desktop:***
+**Using Tableau Desktop:**
 
-- *Open Tableau.*
+- Open Tableau.
 
-- *On the start page, click Connect → To a Server → Google BigQuery.*
+- On the start page, click Connect → To a Server → Google BigQuery.
 
-- *Sign in with your Google account (same one used in your GCP project).*
+- Sign in with your Google account (same one used in your GCP project).
 
-- *Tableau will show your Google Cloud projects.*
+- Tableau will show your Google Cloud projects.
 
-- *Choose your project (e.g., tekstain-25).*
+- Choose your project (e.g., tekstain-25).
 
-- *Expand the project → dataset → select your table (e.g., pollution.air_quality).*
+- Expand the project → dataset → select your table (e.g., pollution.air_quality).
 
-- *Click Connect and then Load Data.*
+- Click Connect and then Load Data.
 
-Now Tableau will pull a snapshot of your BigQuery data into its workspace.
+*Now Tableau will pull a snapshot of your BigQuery data into its workspace.*
 
-Note: For real-time streaming dashboards, Choose Live Connection, Tableau keeps a direct link to BigQuery and queries it every few seconds/minutes.
+Note: *For real-time streaming dashboards, Choose Live Connection, Tableau keeps a direct link to BigQuery and queries it every few seconds/minutes.*
  
 **Build Your First Dashboard**
 
