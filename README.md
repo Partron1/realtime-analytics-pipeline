@@ -195,7 +195,6 @@ with open(input_file, "r") as f:
         time.sleep(1)  # 1 second per simulated event
 ```
 
-
 **Go to Jobs**
 - Create job from template
 - Job name: air-data
@@ -277,3 +276,4 @@ Note: *For real-time streaming dashboards, Choose Live Connection, Tableau keeps
 - Create a Data-Driven Alert (e.g., PM2.5 > 35 µg/m³).
 
 - Tableau can send an email alert when the condition is met.
+  
