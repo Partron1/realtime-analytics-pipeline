@@ -8,7 +8,7 @@ Built a real-time data streaming pipeline to monitor air quality across the city
   
 The Pub/sub template is a streaming pipeline that can read JSON-formatted messages from a Pub/Sub topic and write them to a BigQuery table 
 
-**Pipeline:**  
+**Workflow:**  
 IoT Sensors (Simulated) →  Pub/Sub →  Dataflow (UDF Transform) →  BigQuery →  Tableau Dashboard
 
 **Impact:** To demonstrate how smart cities can monitor environmental conditions and trigger alerts when pollution thresholds are exceeded.
