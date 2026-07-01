@@ -222,7 +222,7 @@ Go to BigQuery page
 Tableau showing city-level pollution dashboard made of different charts, alerts when thresholds are exceeded. 
 
 - Tableau can’t connect directly to Pub/Sub or Dataflow.It connects to BigQuery, where your final, cleaned data is stored.
-- Before connecting Tableau, make sure there’s at least some data already written into your BigQuery table ,even a few records.
+- Before connecting Tableau, it was made sure there’s at least some data already written into BigQuery table ,even a few records.
 
 **Using Tableau Desktop:**
 
@@ -240,17 +240,17 @@ Tableau showing city-level pollution dashboard made of different charts, alerts 
 
 - Click Connect and then Load Data.
 
-*Now Tableau will pull a snapshot of your BigQuery data into its workspace.*
+*Now Tableau will pull a snapshot of the BigQuery data into its workspace.*
 
-Note: *For real-time streaming dashboards, Choose Live Connection, Tableau keeps a direct link to BigQuery and queries it every few seconds/minutes.*
+Note: *For real-time streaming dashboards, I chose Live Connection, Tableau keeps a direct link to BigQuery and queries it every few seconds/minutes.*
  
-**Build Your First Dashboard**
+**Build My First Dashboard**
 
-#### 1. Drag Fields into Rows & Columns
+#### 1. Dragged Fields into Rows & Columns
 
  - X-axis (Columns): timestamp, Y-axis (Rows): PM2_5
 
-#### 2. Add More Charts
+#### 2. Added More Charts
 
 - Heatmap →  location vs pollutant (color shows intensity)
 
@@ -266,14 +266,14 @@ Note: *For real-time streaming dashboards, Choose Live Connection, Tableau keeps
 
 #### 4. Combine into a Dashboard
 
-- Click New Dashboard, then drag your individual charts into it.
-- Arrange them however you like.
+- Clicked my New Dashboard, then dragged my individual charts into it.
+- Arranged them however I liked.
 
-**Create Alerts in Tableau**
+**Created Alerts in Tableau**
 
-- Publish your dashboard to Tableau Server or Tableau Cloud.
+- Published my dashboard to Tableau Server or Tableau Cloud.
 
-- Create a Data-Driven Alert (e.g., PM2.5 > 35 µg/m³).
+- Created a Data-Driven Alert (e.g., PM2.5 > 35 µg/m³).
 
 - Tableau can send an email alert when the condition is met.
   
